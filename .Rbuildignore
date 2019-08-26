@@ -1,0 +1,5 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+RBingAds.Rproj
+.bing.auth.RData
+inst/sandbox.R

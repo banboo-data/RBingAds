@@ -4,6 +4,8 @@
 #'
 #' @param download_url url created with get_report_url
 #'
+#' @importFrom utils download.file read.csv unzip zip
+#'
 #' @examples
 #' \dontrun{
 #' data <- download_data(download_url = download_url)

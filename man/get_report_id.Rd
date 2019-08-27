@@ -31,7 +31,9 @@ report_id <- get_report_id(bing_auth = bing_auth,
                          customer_id = "******",
                          account_id = "*******",
                          report = "CampaignPerformanceReport",
-                         columns = c("AccountName", "CampaignName", "TimePeriod", "Impressions", "Clicks", "Spend", "Conversions"),
+                         columns = c("AccountName", "CampaignName",
+                                     "TimePeriod", "Impressions",
+                                     "Clicks", "Spend", "Conversions"),
                          start = "2019-01-01",
                          end = "2019-01-31")
 }

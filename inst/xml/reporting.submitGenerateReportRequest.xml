@@ -1,0 +1,30 @@
+<SubmitGenerateReportRequest xmlns="https://bingads.microsoft.com/Reporting/v13">
+      <ReportRequest i:nil="false" i:type="%sRequest">
+        <ExcludeColumnHeaders i:nil="false">false</ExcludeColumnHeaders>
+        <ExcludeReportFooter i:nil="false">true</ExcludeReportFooter>
+        <ExcludeReportHeader i:nil="false">true</ExcludeReportHeader>
+        <Format i:nil="false">Csv</Format>
+        <Language i:nil="false">English</Language>
+        <ReturnOnlyCompleteData i:nil="false">false</ReturnOnlyCompleteData>
+        <!--These fields are applicable if the derived type attribute is set to AccountPerformanceReportRequest-->
+        <Aggregation>Daily</Aggregation>
+        <Columns i:nil="false">%s</Columns>
+        <Scope i:nil="false">
+          <AccountIds i:nil="false" xmlns:a1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+            <a1:long>%s</a1:long>
+          </AccountIds>
+        </Scope>
+        <Time i:nil="false">
+          <CustomDateRangeEnd i:nil="false">
+            <Day>%s</Day>
+            <Month>%s</Month>
+            <Year>%s</Year>
+          </CustomDateRangeEnd>
+          <CustomDateRangeStart i:nil="false">
+            <Day>%s</Day>
+            <Month>%s</Month>
+            <Year>%s</Year>
+          </CustomDateRangeStart>
+        </Time>
+        </ReportRequest>
+    </SubmitGenerateReportRequest>

@@ -6,7 +6,7 @@
 #' @param credentials list of credentials
 #' @param refresh_token refresh token from previous authentication
 #'
-#' @importFrom httr POST
+#' @importFrom httr POST add_headers
 #' @importFrom jsonlite fromJSON
 #'
 #' @return Access token with corresponding time stamp.

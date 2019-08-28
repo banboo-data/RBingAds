@@ -5,7 +5,7 @@
 #'
 #' @param credentials list of credentials
 #'
-#' @importFrom httr POST
+#' @importFrom httr POST add_headers
 #' @importFrom jsonlite fromJSON
 #'
 #' @return Access token with corresponding time stamp.

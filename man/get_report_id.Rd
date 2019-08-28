@@ -8,7 +8,7 @@ get_report_id(bing_auth, customer_id, account_id, report, columns, start,
   end)
 }
 \arguments{
-\item{bing_auth}{auth object generated with authenticat()}
+\item{bing_auth}{auth object generated with authenticate()}
 
 \item{customer_id}{customer / manager id}
 

@@ -4,7 +4,7 @@
 #'
 #' @param download_url url created with get_report_url
 #'
-#' @importFrom utils download.file read.csv unzip zip
+#' @importFrom utils download.file read.csv unzip
 #'
 #' @examples
 #' \dontrun{

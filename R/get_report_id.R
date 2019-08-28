@@ -2,7 +2,7 @@
 #'
 #' @description get_report_id queries the Bing API and request a report id.
 #'
-#' @param bing_auth auth object generated with authenticat()
+#' @param bing_auth auth object generated with authenticate()
 #' @param customer_id customer / manager id
 #' @param account_id account id
 #' @param report report type

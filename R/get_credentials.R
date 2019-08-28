@@ -1,7 +1,8 @@
 #' @title Authentication of R app
 #' @description get_credentials authenticates the R app at the
-#' Bing authentication server using OAUTH2 and receives the client token.
-#' Usually you need not to run get_credentials() explicitly since the whole authentication process is managed by \code{\link{authenticate}}.
+#' Bing authentication server and receives the client token.
+#' Usually you need not to run get_credentials() explicitly
+#' since the whole authentication process is managed by \code{\link{authenticate}}.
 #' @importFrom utils browseURL
 #' @return Client token from Bing authentication server.
 .get_credentials <- function(){

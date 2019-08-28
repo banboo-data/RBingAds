@@ -41,7 +41,7 @@ get_report_id <- function(bing_auth,
   soap_action <- "SubmitGenerateReport"
   header <- paste(readLines(paste0(system.file(package = "RBingAds"), "/xml/reporting.header.xml")), collapse = "")
   body_xml <- paste(readLines(paste0(system.file(package = "RBingAds"), "/xml/reporting.SubmitGenerateReportRequest.xml")), collapse = "")
-  columns_xml <- .get_columns_xml(report, columms)
+  columns_xml <- .get_columns_xml(report, columns)
 
   body_xml <- sprintf(body_xml,
                      report,

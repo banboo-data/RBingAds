@@ -15,7 +15,6 @@
 #'
 #' @export
 download_data <- function(download_url){
- zip(zipfile = 'tmp.zip', files = 'tmp_file')
  download.file(url = download_url, destfile = "tmp.zip", mode = 'wb', method ='auto')
  unzip("tmp.zip")
  files <- unzip("tmp.zip", list = TRUE)

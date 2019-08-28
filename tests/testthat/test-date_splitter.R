@@ -9,7 +9,3 @@ test_that("data type is correct", {
   expect_is(date_list$month, "integer")
   expect_is(date_list$day, "integer")
 })
-
-
-
-

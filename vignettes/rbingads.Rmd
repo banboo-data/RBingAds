@@ -1,0 +1,94 @@
+---
+title: "RBingAds - R interface for the Bing Ads API"
+author: "Johannes Burkhardt"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    fig_caption: false
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    toc_depth: 3
+vignette: >
+  %\VignetteIndexEntry{RBingAds - R interface for the Bing Ads API}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+### Introduction
+
+Welcome to the official documentation of the **RBingAds** package for **Bing Ads**. RBingAds enables users of the R Language for Statistical Computing to directly access their Bing Ads account in order to consume and analyze information provided by the Bing Ads API.
+
+### Requirements
+
+In order to use the **RBingAds** package, you need access to the **Bing Ads API**. You will need following credentials and information:
+
+- client id
+- client secret
+- API developer token
+- admin email login with password
+- customer / manager id
+- account id
+
+### Installation
+
+```{r installation, eval=FALSE}
+require(devtools)
+install_github("jburkhardt/RBingAds")
+```
+
+### Bing Ads API Authentication
+
+The authentication requires a **client id**, a **client secret** and the **API developer token** from the API project (app, SDK). Furthermore, you need an **admin email** with **login credentials / password** for a one time authentication including user interaction in the webbrowser.
+
+```{r authentication, eval=FALSE}
+library(RBingAds)
+bing_auth <- authenticate(save = T)
+```
+
+### Load Data
+
+Loading data proceedes in three steps:
+
+1. Generating a report id
+2. Get a download url
+3. Download the data
+
+#### Generate Report ID
+
+```{r report_id, eval=FALSE}
+report_id <- get_report_id(bing_auth = bing_auth,
+                           customer_id = "*******",
+                           account_id = "*******",
+                           report = "CampaignPerformanceReport",
+                           columns = c("AccountName", "CampaignName", "TimePeriod", "Impressions", "Clicks", "Spend", "Conversions"),
+                           start = "2019-01-01",
+                           end = "2019-01-31")
+```
+
+#### Get Download URL
+
+```{r download_url, eval=FALSE}
+download_url <- get_download_url(bing_auth = bing_auth,
+                                customer_id = "******",
+                                account_id = "*******",
+                                report_id = report_id)
+```
+
+#### Download Data
+
+```{r download_data, eval=FALSE}
+data <- download_data(download_url = download_url)
+```
+
+### Acknowledgement
+
+I would like to express my deep gratitude to [Deepesh Goel](https://github.com/deepeshgoeliitk). His previous work on the Bing Ads API and related xml parsing was the key to develop this package.

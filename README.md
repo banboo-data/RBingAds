@@ -53,8 +53,6 @@ report_id <- get_report_id(bing_auth = bing_auth,
 
 ```r
 download_url <- get_download_url(bing_auth = bing_auth,
-                                customer_id = "******",
-                                account_id = "*******",
                                 report_id = report_id)
 ```
 

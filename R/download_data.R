@@ -15,11 +15,14 @@
 #'
 #' @export
 download_data <- function(download_url){
- download.file(url = download_url, destfile = "tmp.zip", mode = 'wb', method ='auto')
- unzip("tmp.zip")
- files <- unzip("tmp.zip", list = TRUE)
- df <- read.csv(files$Name[1])
- file.remove("tmp.zip")
- file.remove(files$Name[1])
- return(df)
+ temp_file <- file.path(tempdir(), "temp.zip")
+ download.file(url = download_url,
+               destfile = temp_file,
+               mode = 'wb',
+               method ='auto')
+ file <- unzip(temp_file, list = TRUE)
+ df <- read.csv(unz(temp_file, file$Name), stringsAsFactors = F)
+ close(unz(temp_file, file$Name))
+ unlink(temp_file)
+ df
 }

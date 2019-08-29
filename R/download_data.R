@@ -12,8 +12,6 @@
 #' }
 #'
 #' @return data
-#'
-#' @export
 download_data <- function(download_url){
  temp_file <- file.path(tempdir(), "temp.zip")
  download.file(url = download_url,

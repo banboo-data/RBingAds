@@ -13,8 +13,6 @@
 #' download_url <- get_download_url(bing_auth = bing_auth,
 #'                                  report_id = report_id)
 #' }
-#'
-#' @export
 get_download_url <- function(bing_auth, report_id){
   url <- "https://reporting.api.bingads.microsoft.com/Api/Advertiser/Reporting/v13/ReportingService.svc"
   soap_action <- "PollGenerateReport"

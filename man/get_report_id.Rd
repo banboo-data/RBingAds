@@ -37,5 +37,4 @@ report_id <- get_report_id(bing_auth = bing_auth,
                          start = "2019-01-01",
                          end = "2019-01-31")
 }
-
 }

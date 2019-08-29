@@ -25,8 +25,6 @@
 #'                          start = "2019-01-01",
 #'                          end = "2019-01-31")
 #' }
-#'
-#' @export
 get_report_id <- function(bing_auth,
                           customer_id,
                           account_id,

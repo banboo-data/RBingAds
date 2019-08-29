@@ -27,6 +27,7 @@ data
 }
 \description{
 load_bing_data queries the Bing Ads API and loads the data.
+Note: There is a function timeout after ten seconds if the data download url is not available.
 }
 \examples{
 \dontrun{

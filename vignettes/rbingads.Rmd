@@ -45,7 +45,7 @@ require(devtools)
 install_github("jburkhardt/RBingAds")
 ```
 
-### Bing Ads API Authentication
+### Authentication
 
 The authentication requires a **client id**, a **client secret** and the **API developer token** from the API project (app, SDK). Furthermore, you need an **admin email** with **login credentials / password** for a one time authentication including user interaction in the webbrowser.
 
@@ -56,44 +56,27 @@ bing_auth <- authenticate(save = T)
 
 ### Load Data
 
-Loading data proceedes in three steps:
+The function `load_bing_data` takes over the complete data retrieval process with the Bing Ads API. If you have a valid `bing_auth` object, your **customer id** and a corresponding **account id**, you can select a report and define the query with metrics, attributes and dates. `load_bing_data` returns the data as a R dataframe.
 
-1. Generating a report id
-2. Get a download url
-3. Download the data
-
-#### Generate Report ID
-
-```{r report_id, eval=FALSE}
-report_id <- get_report_id(bing_auth = bing_auth,
-                           customer_id = "*******",
-                           account_id = "*******",
-                           report = "CampaignPerformanceReport",
-                           columns = c("AccountName", "CampaignName", "TimePeriod", "Impressions", "Clicks", "Spend", "Conversions"),
-                           start = "2019-01-01",
-                           end = "2019-01-31")
+```r
+data <- load_bing_data(bing_auth = bing_auth,
+                       customer_id = "******",
+                       account_id = "*******",
+                       report = "CampaignPerformanceReport",
+                       columns = c("AccountName", "CampaignName",
+                                    "TimePeriod", "Impressions",
+                                    "Clicks", "Spend", "Conversions"),
+                       start = "2019-01-01",
+                       end = "2019-01-31")
 ```
 
-#### Get Download URL
-
-```{r download_url, eval=FALSE}
-download_url <- get_download_url(bing_auth = bing_auth,
-                                report_id = report_id)
-```
-
-#### Download Data
-
-```{r download_data, eval=FALSE}
-data <- download_data(download_url = download_url)
-```
-
-### Development & Contribution
+### Development
 
 The development of the package takes place on github in the repository [RBingAds](https://github.com/jburkhardt/RBingAds) maintained by [Johannes Burkhardt](https://github.com/jburkhardt).
 
 #### Contribution
 
-We are happy if you want to contribute to the package! The easiest way to collaborate is to fork the repository and develope the new feature or bug fix on a new branch.
+We are happy if you want to contribute to the package! The easiest way to collaborate is to fork the repository and develope new features or bug fix on a separate branch.
 
 #### Bug Reporting
 

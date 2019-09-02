@@ -35,7 +35,6 @@ In order to use the **RBingAds** package, you need access to the **Bing Ads API*
 - client secret
 - API developer token
 - admin email login with password
-- customer / manager id
 - account id
 
 ### Installation
@@ -56,11 +55,10 @@ bing_auth <- authenticate(save = T)
 
 ### Load Data
 
-The function `load_bing_data` takes over the complete data retrieval process with the Bing Ads API. If you have a valid `bing_auth` object, your **customer id** and a corresponding **account id**, you can select a report and define the query with metrics, attributes and dates. `load_bing_data` returns the data as a R dataframe.
+The function `load_bing_data` takes over the complete data retrieval process with the Bing Ads API. If you have a valid `bing_auth` object with a corresponding **account id**, you can select a report and define the query with metrics, attributes and dates. `load_bing_data` returns the data as a R dataframe.
 
 ```r
 data <- load_bing_data(bing_auth = bing_auth,
-                       customer_id = "******",
                        account_id = "*******",
                        report = "CampaignPerformanceReport",
                        columns = c("AccountName", "CampaignName",

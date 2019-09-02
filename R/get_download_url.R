@@ -17,7 +17,7 @@ get_download_url <- function(bing_auth, report_id){
   url <- "https://reporting.api.bingads.microsoft.com/Api/Advertiser/Reporting/v13/ReportingService.svc"
   soap_action <- "PollGenerateReport"
   report <- "PollGenerateReportRequest"
-  header <- paste(readLines(paste0(system.file(package = "RBingAds"), "/xml/reporting.header.downloadurl.xml")), collapse = "")
+  header <- paste(readLines(paste0(system.file(package = "RBingAds"), "/xml/reporting.header.authtokens.xml")), collapse = "")
   body_xml <- paste(readLines(paste0(system.file(package = "RBingAds"), "/xml/reporting.pollGenerateReportRequest.reportid.xml")), collapse = "")
   body_xml <- sprintf(body_xml, report_id)
   body <- sprintf(header,

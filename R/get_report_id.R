@@ -3,7 +3,6 @@
 #' @description get_report_id queries the Bing API and request a report id.
 #'
 #' @param bing_auth auth object generated with authenticate()
-#' @param customer_id customer / manager id
 #' @param account_id account id
 #' @param report report type
 #' @param columns columns, attributes and metrics
@@ -16,7 +15,6 @@
 #' @examples
 #' \dontrun{
 #' report_id <- get_report_id(bing_auth = bing_auth,
-#'                          customer_id = "******",
 #'                          account_id = "*******",
 #'                          report = "CampaignPerformanceReport",
 #'                          columns = c("AccountName", "CampaignName",
@@ -26,7 +24,6 @@
 #'                          end = "2019-01-31")
 #' }
 get_report_id <- function(bing_auth,
-                          customer_id,
                           account_id,
                           report,
                           columns,
@@ -37,7 +34,7 @@ get_report_id <- function(bing_auth,
   end_date <- .date_splitter(end)
   url <- "https://reporting.api.bingads.microsoft.com/Api/Advertiser/Reporting/v13/ReportingService.svc"
   soap_action <- "SubmitGenerateReport"
-  header <- paste(readLines(paste0(system.file(package = "RBingAds"), "/xml/reporting.header.xml")), collapse = "")
+  header <- paste(readLines(paste0(system.file(package = "RBingAds"), "/xml/reporting.header.authtokens.xml")), collapse = "")
   body_xml <- paste(readLines(paste0(system.file(package = "RBingAds"), "/xml/reporting.submitGenerateReportRequest.xml")), collapse = "")
   columns_xml <- .get_columns_xml(report, columns)
 
@@ -56,8 +53,6 @@ get_report_id <- function(bing_auth,
                   soap_action,
                   bing_auth$credentials$c_id,
                   bing_auth$access$access_token,
-                  customer_id,
-                  account_id,
                   bing_auth$credentials$auth_developer_token,
                   body_xml)
 

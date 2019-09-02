@@ -4,13 +4,10 @@
 \alias{load_bing_data}
 \title{Load Bing Data}
 \usage{
-load_bing_data(bing_auth, customer_id, account_id, report, columns, start,
-  end)
+load_bing_data(bing_auth, account_id, report, columns, start, end)
 }
 \arguments{
 \item{bing_auth}{auth object generated with authenticate()}
-
-\item{customer_id}{customer / manager id}
 
 \item{account_id}{account id}
 
@@ -32,7 +29,6 @@ Note: There is a function timeout after ten seconds if the data download url is 
 \examples{
 \dontrun{
 data <- load_bing_data(bing_auth = bing_auth,
-                       customer_id = "******",
                        account_id = "*******",
                        report = "CampaignPerformanceReport",
                        columns = c("AccountName", "CampaignName",

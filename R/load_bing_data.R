@@ -4,7 +4,6 @@
 #' Note: There is a function timeout after ten seconds if the data download url is not available.
 #'
 #' @param bing_auth auth object generated with authenticate()
-#' @param customer_id customer / manager id
 #' @param account_id account id
 #' @param report report type
 #' @param columns columns, attributes and metrics
@@ -14,7 +13,6 @@
 #' @examples
 #' \dontrun{
 #' data <- load_bing_data(bing_auth = bing_auth,
-#'                        customer_id = "******",
 #'                        account_id = "*******",
 #'                        report = "CampaignPerformanceReport",
 #'                        columns = c("AccountName", "CampaignName",
@@ -28,7 +26,6 @@
 #'
 #' @export
 load_bing_data <- function(bing_auth,
-                           customer_id,
                            account_id,
                            report,
                            columns,
@@ -44,7 +41,6 @@ load_bing_data <- function(bing_auth,
 
   report_id <- get_report_id(
     bing_auth = bing_auth,
-    customer_id = customer_id,
     account_id = account_id,
     report = report,
     columns = columns,

@@ -4,13 +4,10 @@
 \alias{get_report_id}
 \title{Get Report ID}
 \usage{
-get_report_id(bing_auth, customer_id, account_id, report, columns, start,
-  end)
+get_report_id(bing_auth, account_id, report, columns, start, end)
 }
 \arguments{
 \item{bing_auth}{auth object generated with authenticate()}
-
-\item{customer_id}{customer / manager id}
 
 \item{account_id}{account id}
 
@@ -28,7 +25,6 @@ get_report_id queries the Bing API and request a report id.
 \examples{
 \dontrun{
 report_id <- get_report_id(bing_auth = bing_auth,
-                         customer_id = "******",
                          account_id = "*******",
                          report = "CampaignPerformanceReport",
                          columns = c("AccountName", "CampaignName",

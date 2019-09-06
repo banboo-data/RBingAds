@@ -31,3 +31,4 @@ vignettes/*.pdf
 inst/sandbox.R
 # Bing Ads API Auth
 .bing.auth.RData
+.bingauth/.bing.auth.RData

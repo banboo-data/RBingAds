@@ -4,10 +4,12 @@
 \alias{authenticate}
 \title{Invoke the Authentication Process with Bing}
 \usage{
-authenticate(save = T)
+authenticate(save = F, path = ".bingauth")
 }
 \arguments{
-\item{save}{logical, should the authentication information should be saved on disk? Defaults to TRUE.}
+\item{save}{logical, should the authentication information should be saved on disk? Defaults to FALSE.}
+
+\item{path}{path to auth file directory}
 }
 \value{
 data.frame containing credentials, optionally saved as .RData in the current working directory

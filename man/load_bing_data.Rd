@@ -4,7 +4,8 @@
 \alias{load_bing_data}
 \title{Load Bing Data}
 \usage{
-load_bing_data(bing_auth, account_id, report, columns, start, end)
+load_bing_data(bing_auth, account_id, report, columns, start, end,
+  time_out = 5)
 }
 \arguments{
 \item{bing_auth}{auth object generated with authenticate()}
@@ -18,6 +19,8 @@ load_bing_data(bing_auth, account_id, report, columns, start, end)
 \item{start}{start date}
 
 \item{end}{end date}
+
+\item{time_out}{function time out in seconds}
 }
 \value{
 data

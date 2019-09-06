@@ -9,6 +9,7 @@
 #' @param columns columns, attributes and metrics
 #' @param start start date
 #' @param end end date
+#' @param time_out function time out in seconds
 #'
 #' @examples
 #' \dontrun{
@@ -30,8 +31,9 @@ load_bing_data <- function(bing_auth,
                            report,
                            columns,
                            start,
-                           end) {
-  if (as.numeric(Sys.time()) - 3600 >= bing_auth$access$time_stamp) {
+                           end,
+                           time_out = 5) {
+  if (as.numeric(Sys.time()) - bing_auth$access$expires_in >= bing_auth$access$time_stamp) {
     bing_auth$access <-
       .refresh_token(
         credentials = bing_auth$credentials,
@@ -52,7 +54,6 @@ load_bing_data <- function(bing_auth,
                                    report_id = report_id)
 
   start_time <- as.numeric(Sys.time())
-  time_out <- 10
 
   while (class(download_url) == "XMLAttributes" &
          as.numeric(Sys.time()) - start_time < time_out) {
@@ -62,11 +63,10 @@ load_bing_data <- function(bing_auth,
 
   if (grepl("https", download_url)) {
     data <- download_data(download_url = download_url)
-    cat(sprintf("data downloaded for account: %s\n", account_id))
     data
 
   } else {
-    cat(sprintf("no data available for account: %s\n", account_id))
+    NULL
 
   }
 

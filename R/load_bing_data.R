@@ -1,8 +1,6 @@
 #' @title Load Bing Data
-#'
 #' @description load_bing_data queries the Bing Ads API and loads the data.
 #' Note: There is a function timeout after ten seconds if the data download url is not available.
-#'
 #' @param bing_auth auth object generated with authenticate()
 #' @param account_id account id
 #' @param report report type
@@ -10,7 +8,6 @@
 #' @param start start date
 #' @param end end date
 #' @param time_out function time out in seconds
-#'
 #' @examples
 #' \dontrun{
 #' data <- load_bing_data(bing_auth = bing_auth,
@@ -24,7 +21,6 @@
 #' }
 #'
 #' @return data
-#'
 #' @export
 load_bing_data <- function(bing_auth,
                            account_id,

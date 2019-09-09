@@ -4,22 +4,26 @@
 \alias{authenticate}
 \title{Invoke the Authentication Process with Bing}
 \usage{
-authenticate(save = F, path = ".bingauth")
+authenticate(save = F, path = ".bingauth", gitignore = F)
 }
 \arguments{
 \item{save}{logical, should the authentication information should be saved on disk? Defaults to FALSE.}
 
 \item{path}{path to auth file directory}
+
+\item{gitignore}{logical, adds/creates the authentication information to .gitignore. Defaults to FALSE}
 }
 \value{
 data.frame containing credentials, optionally saved as .RData in the current working directory
 }
 \description{
 This function starts the authentication process with
-Bing. Note that this function needs user interaction.
+Bing. Note that this interactive function needs user interaction.
 }
 \examples{
 \dontrun{
-bing_auth <- authenticate(save = F)
+bing_auth <- authenticate(save = T,
+                          path = ".bingauth",
+                          gitignore = T)
 }
 }

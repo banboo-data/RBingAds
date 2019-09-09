@@ -15,9 +15,3 @@ data
 \description{
 downloads data from download_url
 }
-\examples{
-\dontrun{
-data <- download_data(download_url = download_url)
-}
-
-}

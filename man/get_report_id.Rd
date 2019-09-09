@@ -19,18 +19,9 @@ get_report_id(bing_auth, account_id, report, columns, start, end)
 
 \item{end}{end date}
 }
+\value{
+report id
+}
 \description{
 get_report_id queries the Bing API and request a report id.
-}
-\examples{
-\dontrun{
-report_id <- get_report_id(bing_auth = bing_auth,
-                         account_id = "*******",
-                         report = "CampaignPerformanceReport",
-                         columns = c("AccountName", "CampaignName",
-                                     "TimePeriod", "Impressions",
-                                     "Clicks", "Spend", "Conversions"),
-                         start = "2019-01-01",
-                         end = "2019-01-31")
-}
 }

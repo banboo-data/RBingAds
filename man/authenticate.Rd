@@ -18,3 +18,8 @@ data.frame containing credentials, optionally saved as .RData in the current wor
 This function starts the authentication process with
 Bing. Note that this function needs user interaction.
 }
+\examples{
+\dontrun{
+bing_auth <- authenticate(save = F)
+}
+}

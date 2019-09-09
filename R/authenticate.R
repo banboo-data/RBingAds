@@ -3,7 +3,7 @@
 #' Bing. Note that this interactive function needs user interaction.
 #' @param save logical, should the authentication information should be saved on disk? Defaults to FALSE.
 #' @param path path to auth file directory
-#' @param gitignore logical, adds/creates the authentication information to .gitignore. Defaults to FALSE
+#' @param gitignore logical, adds/appends .gitignore with the authentication information. Defaults to FALSE.
 #' @examples
 #' \dontrun{
 #' bing_auth <- authenticate(save = T,

@@ -11,7 +11,7 @@ authenticate(save = F, path = ".bingauth", gitignore = F)
 
 \item{path}{path to auth file directory}
 
-\item{gitignore}{logical, adds/creates the authentication information to .gitignore. Defaults to FALSE}
+\item{gitignore}{logical, adds/appends .gitignore with the authentication information. Defaults to FALSE.}
 }
 \value{
 data.frame containing credentials, optionally saved as .RData in the current working directory

@@ -1,19 +1,24 @@
 #' @title Invoke the Authentication Process with Bing
-#' @description This function starts the authentication process with
-#' Bing. Note that this interactive function needs user interaction.
+#' @description This function starts and manages the authentication process with
+#' Bing. If you authenticate for the first time, this function requires user interactions.
+#' You optionally can save the authentication credentials for further usage of the API.
 #' @param save logical, should the authentication information should be saved on disk? Defaults to FALSE.
 #' @param path path to auth file directory
 #' @param gitignore logical, adds/appends .gitignore with the authentication information. Defaults to FALSE.
 #' @examples
+#' \donttest{
 #' \dontrun{
-#' bing_auth <- authenticate(save = T,
-#'                           path = ".bingauth",
-#'                           gitignore = T)
+#' if(interactive()){
+#' bing_auth <- authenticate(save = F,
+#'                           path, # ".bingauth"
+#'                           gitignore = F)
 #' }
-#' @return data.frame containing credentials, optionally saved as .RData in the current working directory
+#' }
+#' }
+#' @return data.frame containing credentials, optionally saved as .RData in the specified path
 #' @export
 authenticate <- function(save = F,
-                         path = ".bingauth",
+                         path,
                          gitignore = F) {
   if (exists("bing_auth")) {
     bing_auth$access <-

@@ -27,9 +27,9 @@ The authentication requires a **client id**, a **client secret** and the **API d
 
 ```r
 library(RBingAds)
-bing_auth <- authenticate(save = T,
-                          path = ".bingauth",
-                          gitignore = T)
+bing_auth <- authenticate(save = F,
+                          path, # ".bingauth",
+                          gitignore = F)
 ```
 
 ### Load Data

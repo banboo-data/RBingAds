@@ -17,8 +17,9 @@ authenticate(save = F, path, gitignore = F)
 data.frame containing credentials, optionally saved as .RData in the specified path
 }
 \description{
-This function starts the authentication process with
-Bing. Note that this interactive function needs user interaction.
+This function starts and manages the authentication process with
+Bing. If you authenticate for the first time, this function requires user interactions.
+You optionally can save the authentication credentials for further usage of the API.
 }
 \examples{
 \donttest{
